@@ -24,7 +24,7 @@ class ProcessImage extends Component {
     sepia: false,
     dither565: false,
     disableWebWorker: false,
-    crossOrigin = 'use-credentials'
+    crossOrigin: 'use-credentials'
   };
 
   state = {
@@ -148,7 +148,13 @@ class ProcessImage extends Component {
   worker = null;
 
   processedImage = (image, restProps, style, getImageRef, crossOrigin) => (
-    <img src={image} {...restProps} style={style} ref={getImageRef} crossOrigin={crossOrigin} />
+    <img
+      src={image}
+      {...restProps}
+      style={style}
+      ref={getImageRef}
+      crossOrigin={crossOrigin}
+    />
   );
 
   placeholderImage = image =>
@@ -166,7 +172,7 @@ class ProcessImage extends Component {
           image,
           restProps,
           this.getDefaultImageSize(props),
-          props.getImageRef, 
+          props.getImageRef,
           props.crossOrigin
         )
       }
